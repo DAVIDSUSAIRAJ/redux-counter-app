@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, reset } from "./actions";
 // import { useSelector, useDispatch } from "react-redux";
@@ -43,10 +43,18 @@ function App() {
   const dispatch = useDispatch();
   return (
     <div className="App">
-      <h1>COUNTER: {counter} </h1>
-      <button onClick={() => dispatch(increment())}>PLUS +1</button>
-      <button onClick={() => dispatch(decrement())}>MINUS -1</button>
-      <button onClick={() => dispatch(reset())}>RESET</button>
+      <div className="redux--counter">
+        <h1>COUNTER : {counter} </h1>
+        <button className="increment" onClick={() => dispatch(increment())}>
+          PLUS +1
+        </button>
+        <button className="decrement" onClick={() => dispatch(decrement())}>
+          MINUS -1
+        </button>
+        <button className="reset" onClick={() => dispatch(reset())}>
+          RESET
+        </button>
+      </div>
     </div>
   );
 }
